@@ -1,0 +1,32 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/data-api-builder/main/schemas/dab.draft.schema.json",
+    "data-source": {
+      "database-type": "mssql",
+      "connection-string": "Server=tcp:study-server.database.windows.net,1433;Database=AdventureWorks;Authentication=Active Directory Default"
+    },
+    "runtime": {
+      "rest": {
+        "enabled": true,
+        "path": "/api"
+      },
+      "graphql": {
+        "enabled": true,
+        "path": "/graphql"
+      }
+    },
+    "entities": {
+      "SalesOrderDetail": {
+        "source": "Sales.SalesOrderDetail",
+        "permissions": [
+          {
+            "role": "anonymous",
+            "actions": ["read"]
+          }
+        ],
+        "graphql": {
+          "enabled": true,
+          "type": "SalesOrderDetail"
+        }
+      }
+    }
+  }
