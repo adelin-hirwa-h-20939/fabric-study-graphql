@@ -1,9 +1,0 @@
-{
-    "routes": [
-        {
-            "route": "/dataapi/*",
-            "serve": "/dataapi",
-            "methods": ["GET", "POST"]
-        }
-    ]
-}
